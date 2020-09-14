@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useContext } from "react";
+import { ModeContext } from "../context/ModeContext";
 
 const AddPopularProducts = (props) => {
-  const { shopping, addToShoppingList, mode } = props
-  const populars = ["sel", "sucre", "pain", "lait", "beurre", "huile"]
-  const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark"
+  const { shopping, addToShoppingList } = props;
+  const { mode } = useContext(ModeContext);
+  const populars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
+  const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
   return (
     <div className="mb-3 d-flex flex-wrap align-items-center">
       Avez vous besoin de ?
@@ -19,7 +21,7 @@ const AddPopularProducts = (props) => {
         </button>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default AddPopularProducts
+export default AddPopularProducts;
