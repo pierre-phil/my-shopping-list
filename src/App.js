@@ -8,7 +8,7 @@ import ModeContextProvider from "./context/ModeContext";
 function App() {
   const { mode, setMode } = useContext(ModeContext);
   return (
-    <ModeContextProvider mode={mode} setMode={setMode}>
+    <ModeContextProvider>
       <AppContainer mode={mode}>
         <header className="App-header d-flex justify-content-between flex-wrap align-items-center mb-5">
           <h1>Ma liste des courses</h1>

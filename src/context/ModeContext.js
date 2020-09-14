@@ -1,9 +1,9 @@
 import React, { useState, createContext } from "react";
 
-export const ModeContext = createContext("light");
+export const ModeContext = createContext("dark");
 
 const ModeContextProvider = ({ children }) => {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("dark");
   return (
     <ModeContext.Provider value={{ mode, setMode }}>
       {children}
