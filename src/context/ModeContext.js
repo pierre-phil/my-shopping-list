@@ -1,6 +1,6 @@
 import React, { useState, createContext } from "react";
 
-export const ModeContext = createContext("dark");
+export const ModeContext = createContext();
 
 const ModeContextProvider = ({ children }) => {
   const [mode, setMode] = useState("dark");

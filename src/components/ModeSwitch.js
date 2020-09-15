@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ModeContext } from "../context/ModeContext";
 
 const ModeSwitch = () => {
-  const { setMode } = useContext(ModeContext);
+  const { setMode, mode } = useContext(ModeContext);
   const hanleModeChange = () => {
     setMode((mode) => (mode === "dark" ? "light" : "dark"));
   };
@@ -15,7 +15,7 @@ const ModeSwitch = () => {
         onChange={hanleModeChange}
       />
       <label className="form-check-label" htmlFor="activate">
-        Mode Sombre
+        {mode === "dark" ? "Mode clair" : "Mode sombre"}
       </label>
     </div>
   );

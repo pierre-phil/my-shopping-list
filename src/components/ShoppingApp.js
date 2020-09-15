@@ -1,11 +1,9 @@
-import React, { useState, useContext } from "react";
-import { ModeContext } from "../context/ModeContext";
+import React, { useState } from "react";
 import AddPopularProducts from "./AddPopularProducts";
 import ShoppingList from "./ShoppingList";
 import AddProductForm from "./AddProductForm";
 
 const ShoppingApp = () => {
-  const { mode } = useContext(ModeContext);
   const [shopping, setShopping] = useState([]);
 
   const addToShoppingList = (product) => {
@@ -22,7 +20,6 @@ const ShoppingApp = () => {
         shopping={shopping}
         addToShoppingList={addToShoppingList}
         removeFromShoppingList={removeFromShoppingList}
-        mode={mode}
       />
       <ShoppingList
         shopping={shopping}
