@@ -12,10 +12,12 @@ const ModeSwitch = () => {
         className="form-check-input"
         type="checkbox"
         id="activate"
+        checked={mode === "dark"}
+        // ici pour que la position du bouton soit enfoncée quand le mode est dark, pas enfoncé quand le mode est light
         onChange={hanleModeChange}
       />
       <label className="form-check-label" htmlFor="activate">
-        {mode === "dark" ? "Mode clair" : "Mode sombre"}
+        {mode === "dark" ? "Mode sombre" : "Mode clair"}
       </label>
     </div>
   );
