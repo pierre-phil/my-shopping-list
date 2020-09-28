@@ -8,8 +8,8 @@ function App() {
   return (
     <ModeContextProvider>
       <AppContainer>
-        <header className="App-header d-flex justify-content-between flex-wrap align-items-center mb-5">
-          <h1>Ma liste des courses</h1>
+        <header className="App-header mb-4">
+          <h1 className="text-center">Ma liste des courses</h1>
           <ModeSwitch />
         </header>
         <ShoppingApp />

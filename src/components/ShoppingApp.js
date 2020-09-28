@@ -39,20 +39,21 @@ const ShoppingApp = () => {
 
   return (
     <section>
-      <h2 className="mb-3">Produits à acheter</h2>
-      <AddPopularProducts
-        shopping={shopping}
-        addToShoppingList={addToShoppingList}
-        removeFromShoppingList={removeFromShoppingList}
-      />
-      <ShoppingList
-        shopping={shopping}
-        removeFromShoppingList={removeFromShoppingList}
-      />
-      <AddProductForm
-        shopping={shopping}
-        addToShoppingList={addToShoppingList}
-      />
+      <div className="row">
+        <ShoppingList
+          shopping={shopping}
+          removeFromShoppingList={removeFromShoppingList}
+        />
+        <AddPopularProducts
+          shopping={shopping}
+          addToShoppingList={addToShoppingList}
+          removeFromShoppingList={removeFromShoppingList}
+        />
+        <AddProductForm
+          shopping={shopping}
+          addToShoppingList={addToShoppingList}
+        />
+      </div>
     </section>
   );
 };
