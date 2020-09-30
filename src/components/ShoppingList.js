@@ -33,7 +33,9 @@ const ShoppingList = (props) => {
           </button>
         </div>
       ) : (
-        ""
+        <p className="small text-info">
+          <i>Youpi ! Rien à acheter pour l'instant.</i>
+        </p>
       )}
     </div>
   );
