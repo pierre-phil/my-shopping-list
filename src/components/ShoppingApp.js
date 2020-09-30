@@ -24,6 +24,10 @@ const ShoppingApp = () => {
     setShopping(shopping.filter((el) => el !== product));
   };
 
+  const eraseShoppingList = () => {
+    setShopping([]);
+  };
+
   useEffect(() => {
     // change le titre de la page selon nb éléments dans liste
     console.log("changement");
@@ -43,6 +47,7 @@ const ShoppingApp = () => {
         <ShoppingList
           shopping={shopping}
           removeFromShoppingList={removeFromShoppingList}
+          eraseShoppingList={eraseShoppingList}
         />
         <AddPopularProducts
           shopping={shopping}

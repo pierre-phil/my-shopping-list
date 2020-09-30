@@ -1,7 +1,7 @@
 import React from "react";
 
 const ShoppingList = (props) => {
-  const { shopping, removeFromShoppingList } = props;
+  const { shopping, removeFromShoppingList, eraseShoppingList } = props;
 
   return (
     <div className="col-sm-9">
@@ -25,7 +25,10 @@ const ShoppingList = (props) => {
       </ul>
       {shopping.length >= 1 ? (
         <div className="d-flex justify-content-end">
-          <button className="btn btn-sm btn-outline-danger">
+          <button
+            className="btn btn-sm btn-outline-danger"
+            onClick={() => eraseShoppingList()}
+          >
             <i>Effacer la liste</i>
           </button>
         </div>
