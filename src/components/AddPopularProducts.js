@@ -1,12 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ModeContext } from "../context/ModeContext";
 
 const AddPopularProducts = (props) => {
   const { shopping, addToShoppingList } = props;
   const { mode } = useContext(ModeContext);
-  const populars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
-
+  let populars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
   const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
+
+  const [items, setItems] = useState(false);
+
+  const setPersonalProducts = () => {
+    setItems(items === false ? true : false);
+  };
+
+  const handleItemsSubmit = (event) => {
+    event.preventDefault();
+    populars[1] = event.target.elements.item.value;
+    console.log(populars[1]);
+    event.target.reset();
+  };
 
   return (
     <div className="col-sm-2">
@@ -25,6 +37,30 @@ const AddPopularProducts = (props) => {
           </button>
         ))}
       </div>
+      <button
+        type="button"
+        className={`btn btn-sm btn-outline-success`}
+        onClick={() => setPersonalProducts()}
+      >
+        <i>set items</i>
+      </button>
+      {items ? (
+        <form onSubmit={handleItemsSubmit} className="col-sm-9">
+          <div className="input-group mb-3">
+            <button
+              className={`btn btn-sm ${buttonClass}`}
+              htmlFor="item"
+              type="submit"
+              id="button-addon1"
+            >
+              Produit 1
+            </button>
+            <input className="form-control" type="text" id="item" />
+          </div>
+        </form>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

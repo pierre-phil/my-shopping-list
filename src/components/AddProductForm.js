@@ -5,6 +5,7 @@ const AddProductForm = (props) => {
   const { mode } = useContext(ModeContext);
   const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
   const { shopping, addToShoppingList } = props;
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const product = event.target.elements.product.value;
