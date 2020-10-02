@@ -17,7 +17,7 @@ const AddPopularProducts = (props) => {
 
   const handleItemsSubmit = (event) => {
     event.preventDefault();
-    const customProduct = event.target.elements.bite.value;
+    const customProduct = event.target.elements.customItems.value;
     console.log(customProduct);
     setPopulars([...populars, customProduct]);
     console.log(populars);
@@ -25,15 +25,15 @@ const AddPopularProducts = (props) => {
   };
 
   return (
-    <div className="col-sm-2">
+    <div className="col-sm-3">
       <hr></hr>
-      <p>Ajout rapide</p>
+      <p>Frequent items</p>
       <div>
         {populars.map((el) => (
           <button
             type="button"
             key={el}
-            className={`btn btn-sm ${buttonClass} mr-1 my-1`}
+            className={`btn btn-sm ${buttonClass} mr-1 mb-1`}
             onClick={() => addToShoppingList(el)}
             disabled={shopping.includes(el)}
           >
@@ -42,39 +42,44 @@ const AddPopularProducts = (props) => {
         ))}
       </div>
 
-      <button
-        type="button"
-        className="btn btn-sm btn-link text-left"
-        disabled={items}
-        onClick={() => setPersonalProducts()}
-      >
-        <i>{items ? `Click "save" when done ->` : `Change frequent items`}</i>
-      </button>
-
       {!items ? (
         ""
       ) : (
         <button
           type="button"
-          className="btn btn-sm btn-link text-left"
+          className="btn btn-sm btn-outline-success text-left"
           onClick={() => window.location.reload()}
         >
           <i>Save</i>
         </button>
       )}
 
+      <button
+        type="button"
+        className="btn btn-sm btn-link"
+        disabled={items}
+        onClick={() => setPersonalProducts()}
+      >
+        <i>{items ? `Click "save" when done` : `Reset frequent items`}</i>
+      </button>
+
       {items ? (
         <form onSubmit={handleItemsSubmit} className="col-sm-9">
-          <div className="input-group mb-3">
+          <div className="input-group input-group-sm mb-3">
             <button
-              className={`btn btn-sm btn-outline-warning my-2 ${buttonClass}`}
-              htmlFor="bite"
+              className={`btn btn-sm btn-outline-primary my-2`}
+              htmlFor="customItems"
               type="submit"
               id="button-addon1"
             >
               Add
             </button>
-            <input className="form-control" type="text" id="bite" required />
+            <input
+              className="form-control"
+              type="text"
+              id="customItems"
+              required
+            />
           </div>
         </form>
       ) : (

@@ -29,7 +29,7 @@ const ShoppingList = (props) => {
             className="btn btn-sm btn-outline-danger"
             onClick={() => eraseShoppingList()}
           >
-            <i>Effacer la liste</i>
+            <i>Reset list</i>
           </button>
         </div>
       ) : (

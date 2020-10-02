@@ -26,7 +26,7 @@ const AddProductForm = (props) => {
           type="submit"
           id="button-addon1"
         >
-          Ajouter
+          Add
         </button>
         <input className="form-control" type="text" id="product" required />
       </div>

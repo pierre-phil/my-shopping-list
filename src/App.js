@@ -9,7 +9,7 @@ function App() {
     <ModeContextProvider>
       <AppContainer>
         <header className="App-header mb-4">
-          <h1 className="text-center">Ma liste des courses</h1>
+          <h1 className="text-center">my Shopping List</h1>
           <ModeSwitch />
         </header>
         <ShoppingApp />

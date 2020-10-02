@@ -18,7 +18,7 @@ const ModeSwitch = () => {
           onChange={hanleModeChange}
         />
         <label className="form-check-label" htmlFor="activate">
-          {mode === "dark" ? "Mode sombre" : "Mode clair"}
+          {mode === "dark" ? "Dark mode" : "Light mode"}
         </label>
       </div>
     </div>
