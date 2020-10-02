@@ -4,7 +4,7 @@ import { ModeContext } from "../context/ModeContext";
 const AddPopularProducts = (props) => {
   const { shopping, addToShoppingList } = props;
   const { mode } = useContext(ModeContext);
-  const initialPopulars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
+  let initialPopulars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
   let [populars, setPopulars] = useState(initialPopulars);
   const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
 
@@ -12,6 +12,7 @@ const AddPopularProducts = (props) => {
 
   const setPersonalProducts = () => {
     setItems(items === false ? true : false);
+    setPopulars([]);
   };
 
   const handleItemsSubmit = (event) => {
@@ -40,15 +41,28 @@ const AddPopularProducts = (props) => {
           </button>
         ))}
       </div>
+
       <button
         type="button"
-        className={
-          items ? `btn btn-sm btn-outline-success` : `btn btn-sm btn-link`
-        }
+        className="btn btn-sm btn-link text-left"
+        disabled={items}
         onClick={() => setPersonalProducts()}
       >
-        <i>{items ? `save` : `set items`}</i>
+        <i>{items ? `Click "save" when done ->` : `Change frequent items`}</i>
       </button>
+
+      {!items ? (
+        ""
+      ) : (
+        <button
+          type="button"
+          className="btn btn-sm btn-link text-left"
+          onClick={() => window.location.reload()}
+        >
+          <i>Save</i>
+        </button>
+      )}
+
       {items ? (
         <form onSubmit={handleItemsSubmit} className="col-sm-9">
           <div className="input-group mb-3">
@@ -58,7 +72,7 @@ const AddPopularProducts = (props) => {
               type="submit"
               id="button-addon1"
             >
-              Produit 1
+              Add
             </button>
             <input className="form-control" type="text" id="bite" required />
           </div>
