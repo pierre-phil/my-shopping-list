@@ -4,14 +4,8 @@ import { ModeContext } from "../context/ModeContext";
 const AddPopularProducts = (props) => {
   const { shopping, addToShoppingList } = props;
   const { mode } = useContext(ModeContext);
-  let [populars, setPopulars] = useState([
-    "sel",
-    "sucre",
-    "pain",
-    "lait",
-    "beurre",
-    "huile",
-  ]);
+  const initialPopulars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
+  let [populars, setPopulars] = useState(initialPopulars);
   const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
 
   const [items, setItems] = useState(false);
@@ -22,8 +16,9 @@ const AddPopularProducts = (props) => {
 
   const handleItemsSubmit = (event) => {
     event.preventDefault();
-    const customProduct = event.target.elements.item.value;
-    setPopulars(...populars, customProduct);
+    const customProduct = event.target.elements.bite.value;
+    console.log(customProduct);
+    setPopulars([...populars, customProduct]);
     console.log(populars);
     event.target.reset();
   };
@@ -59,13 +54,13 @@ const AddPopularProducts = (props) => {
           <div className="input-group mb-3">
             <button
               className={`btn btn-sm btn-outline-warning my-2 ${buttonClass}`}
-              htmlFor="item"
+              htmlFor="bite"
               type="submit"
               id="button-addon1"
             >
               Produit 1
             </button>
-            <input className="form-control" type="text" id="item" />
+            <input className="form-control" type="text" id="bite" required />
           </div>
         </form>
       ) : (

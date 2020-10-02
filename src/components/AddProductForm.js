@@ -14,7 +14,6 @@ const AddProductForm = (props) => {
     } else {
       alert(`${product} est déjà sur la liste`);
     }
-
     event.target.reset();
   };
   return (
