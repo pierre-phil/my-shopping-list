@@ -4,7 +4,14 @@ import { ModeContext } from "../context/ModeContext";
 const AddPopularProducts = (props) => {
   const { shopping, addToShoppingList } = props;
   const { mode } = useContext(ModeContext);
-  let populars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
+  let [populars, setPopulars] = useState([
+    "sel",
+    "sucre",
+    "pain",
+    "lait",
+    "beurre",
+    "huile",
+  ]);
   const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
 
   const [items, setItems] = useState(false);
@@ -15,8 +22,9 @@ const AddPopularProducts = (props) => {
 
   const handleItemsSubmit = (event) => {
     event.preventDefault();
-    populars[1] = event.target.elements.item.value;
-    console.log(populars[1]);
+    const customProduct = event.target.elements.item.value;
+    setPopulars(...populars, customProduct);
+    console.log(populars);
     event.target.reset();
   };
 
@@ -39,16 +47,18 @@ const AddPopularProducts = (props) => {
       </div>
       <button
         type="button"
-        className={`btn btn-sm btn-outline-success`}
+        className={
+          items ? `btn btn-sm btn-outline-success` : `btn btn-sm btn-link`
+        }
         onClick={() => setPersonalProducts()}
       >
-        <i>set items</i>
+        <i>{items ? `save` : `set items`}</i>
       </button>
       {items ? (
         <form onSubmit={handleItemsSubmit} className="col-sm-9">
           <div className="input-group mb-3">
             <button
-              className={`btn btn-sm ${buttonClass}`}
+              className={`btn btn-sm btn-outline-warning my-2 ${buttonClass}`}
               htmlFor="item"
               type="submit"
               id="button-addon1"
