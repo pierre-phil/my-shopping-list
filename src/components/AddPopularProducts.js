@@ -1,11 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ModeContext } from "../context/ModeContext";
 
 const AddPopularProducts = (props) => {
   const { shopping, addToShoppingList } = props;
   const { mode } = useContext(ModeContext);
   let initialPopulars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
-  let [populars, setPopulars] = useState(initialPopulars);
+  let [populars, setPopulars] = useState(
+    () => JSON.parse(localStorage.getItem("myCustomItems")) || initialPopulars
+  );
+
   const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
 
   const [items, setItems] = useState(false);
@@ -18,11 +21,14 @@ const AddPopularProducts = (props) => {
   const handleItemsSubmit = (event) => {
     event.preventDefault();
     const customProduct = event.target.elements.customItems.value;
-    console.log(customProduct);
     setPopulars([...populars, customProduct]);
-    console.log(populars);
     event.target.reset();
   };
+
+  useEffect(() => {
+    // enreigstre popular products dans localstorage
+    localStorage.setItem("myCustomItems", JSON.stringify(populars));
+  }, [populars]);
 
   return (
     <div className="col-sm-3">
@@ -60,7 +66,7 @@ const AddPopularProducts = (props) => {
         disabled={items}
         onClick={() => setPersonalProducts()}
       >
-        <i>{items ? `Click "save" when done` : `Reset frequent items`}</i>
+        <i>{items ? `Click "save" when done` : `Set frequent items`}</i>
       </button>
 
       {items ? (
@@ -84,6 +90,7 @@ const AddPopularProducts = (props) => {
               className="form-control bite mt-2"
               type="text"
               id="customItems"
+              placeholder="Insert frequent item"
               required
             />
           </div>

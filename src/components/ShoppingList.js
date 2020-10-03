@@ -34,7 +34,7 @@ const ShoppingList = (props) => {
         </div>
       ) : (
         <p className="small text-info">
-          <i>Youpi ! Rien à acheter pour l'instant.</i>
+          <i>Alright ! Nothing to buy yet.</i>
         </p>
       )}
     </div>
