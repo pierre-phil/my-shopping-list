@@ -47,7 +47,7 @@ const AddPopularProducts = (props) => {
       ) : (
         <button
           type="button"
-          className="btn btn-sm btn-outline-success text-left"
+          className="btn btn-sm btn-outline-success text-left my-2"
           onClick={() => window.location.reload()}
         >
           <i>Save</i>
@@ -56,7 +56,7 @@ const AddPopularProducts = (props) => {
 
       <button
         type="button"
-        className="btn btn-sm btn-link"
+        className="btn btn-sm btn-link my-2"
         disabled={items}
         onClick={() => setPersonalProducts()}
       >
@@ -75,7 +75,13 @@ const AddPopularProducts = (props) => {
               Add
             </button>
             <input
-              className="form-control"
+              style={{
+                height: "10px",
+                backgroundColor: "rgb(50, 115, 220)",
+                color: "white",
+                border: "2px solid rgb(50, 115, 220)",
+              }}
+              className="form-control bite mt-2"
               type="text"
               id="customItems"
               required
