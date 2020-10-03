@@ -3,17 +3,18 @@ import { ModeContext } from "../context/ModeContext";
 
 const AddPopularProducts = (props) => {
   const { shopping, addToShoppingList } = props;
+
   const { mode } = useContext(ModeContext);
+  const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
+
   let initialPopulars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
   let [populars, setPopulars] = useState(
     () => JSON.parse(localStorage.getItem("myCustomItems")) || initialPopulars
   );
 
-  const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
-
   const [items, setItems] = useState(false);
 
-  const setPersonalProducts = () => {
+  const setCustomPopulars = () => {
     setItems(items === false ? true : false);
     setPopulars([]);
   };
@@ -64,7 +65,7 @@ const AddPopularProducts = (props) => {
         type="button"
         className="btn btn-sm btn-link my-2"
         disabled={items}
-        onClick={() => setPersonalProducts()}
+        onClick={() => setCustomPopulars()}
       >
         <i>{items ? `Click "save" when done` : `Set frequent items`}</i>
       </button>
