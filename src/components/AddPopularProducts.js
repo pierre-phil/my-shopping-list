@@ -54,7 +54,7 @@ const AddPopularProducts = (props) => {
       ) : (
         <button
           type="button"
-          className="btn btn-sm btn-outline-success text-left my-2"
+          className="btn btn-sm btn-outline-danger text-left my-2"
           onClick={() => window.location.reload()}
         >
           <i>Save</i>
@@ -63,7 +63,7 @@ const AddPopularProducts = (props) => {
 
       <button
         type="button"
-        className="btn btn-sm btn-link my-2"
+        className="btn btn-sm btn-link text-info my-2"
         disabled={items}
         onClick={() => setCustomPopulars()}
       >
@@ -74,7 +74,7 @@ const AddPopularProducts = (props) => {
         <form onSubmit={handleItemsSubmit} className="col-sm-9">
           <div className="input-group input-group-sm mb-3">
             <button
-              className={`btn btn-sm btn-outline-primary my-2`}
+              className={`btn btn-sm btn-outline-info my-2`}
               htmlFor="customItems"
               type="submit"
               id="button-addon1"
@@ -83,12 +83,11 @@ const AddPopularProducts = (props) => {
             </button>
             <input
               style={{
-                height: "10px",
-                backgroundColor: "rgb(50, 115, 220)",
+                height: "9px",
                 color: "white",
-                border: "2px solid rgb(50, 115, 220)",
+                border: "2px solid #5bc0de",
               }}
-              className="form-control bite mt-2"
+              className="form-control input mt-2"
               type="text"
               id="customItems"
               placeholder="Insert frequent item"
