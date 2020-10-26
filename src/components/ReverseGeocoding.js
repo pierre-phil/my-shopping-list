@@ -6,8 +6,8 @@ const ReverseGeocoding = ({ latitude, longitude }) => {
   const [city, setCity] = useState("");
 
   useEffect(() => {
-    console.log("latitude", latitude);
-    console.log("longitude", longitude);
+    // console.log("latitude", latitude);
+    // console.log("longitude", longitude);
 
     const API_TOKEN = process.env.REACT_APP_LOCATIONIQ_API_TOKEN;
     const url = `https://us1.locationiq.com/v1/reverse.php?key=${API_TOKEN}&lat=${latitude}&lon=${longitude}&format=json`;
@@ -19,9 +19,9 @@ const ReverseGeocoding = ({ latitude, longitude }) => {
         throw new Error("conversion de coordonnées impossible");
       })
       .then((result) => {
-        console.log("LocationIQ", result);
+        // console.log("LocationIQ", result);
         setCity(result.address.town);
-        console.log("city", city);
+        // console.log("city", city);
       })
       .catch((error) => {
         console.log(error.message);

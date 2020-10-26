@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 
 import { ModeContext } from "../context/ModeContext";
 
+import '../App.css'
+
 const Footer = () => {
   const { mode } = useContext(ModeContext);
   const footerClass = mode === "dark" ? "bg-dark text-light" : "";
@@ -17,13 +19,12 @@ const Footer = () => {
           href="https://pehaa.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-decoration-none"
-          style={{ color: "#f0ad4e" }}
+          className="text-decoration-none links"
         >
           pehaa.com
         </a>
       </p>
-      <p>Contact / report a bug :</p>
+      <p>Contact / report a bug : <a className="links text-decoration-none" target="_blank" rel="noopener noreferrer" href="mailto:contact@my-shopping-list.com">email us</a></p>
     </footer>
   );
 };

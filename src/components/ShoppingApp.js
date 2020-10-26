@@ -30,7 +30,6 @@ const ShoppingApp = () => {
 
   useEffect(() => {
     // change le titre de la page selon nb éléments dans liste
-    console.log("changement");
     document.title = shopping.length
       ? `${shopping.length} item(s) on your shopping list`
       : `my Shopping List`;
