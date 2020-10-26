@@ -4,6 +4,7 @@ import ShoppingApp from "./components/ShoppingApp";
 import ModeSwitch from "./components/ModeSwitch";
 import ModeContextProvider from "./context/ModeContext";
 import Geolocation from "./components/Geolocation"
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
         </header>
         <ShoppingApp />
         <Geolocation />
+        
       </AppContainer>
+      <Footer />
     </ModeContextProvider>
   );
 }

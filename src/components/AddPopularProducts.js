@@ -54,7 +54,7 @@ const AddPopularProducts = (props) => {
       ) : (
         <button
           type="button"
-          className="btn btn-sm btn-outline-danger text-left my-2"
+          className="btn btn-sm btn-outline-success text-left my-2"
           onClick={() => window.location.reload()}
         >
           <i>Save</i>
