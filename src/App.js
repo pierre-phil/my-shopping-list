@@ -3,7 +3,6 @@ import AppContainer from "./components/AppContainer";
 import ShoppingApp from "./components/ShoppingApp";
 import ModeSwitch from "./components/ModeSwitch";
 import ModeContextProvider from "./context/ModeContext";
-import Weather from "./components/Weather";
 import Geolocation from "./components/Geolocation"
 
 
@@ -16,7 +15,6 @@ function App() {
           <ModeSwitch />
         </header>
         <ShoppingApp />
-        <Weather />
         <Geolocation />
       </AppContainer>
     </ModeContextProvider>

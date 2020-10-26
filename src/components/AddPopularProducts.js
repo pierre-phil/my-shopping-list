@@ -84,7 +84,6 @@ const AddPopularProducts = (props) => {
             <input
               style={{
                 height: "9px",
-                color: "white",
                 border: "2px solid #5bc0de",
               }}
               className="form-control input mt-2"

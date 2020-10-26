@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+
+import Weather from './Weather'
 
 const ReverseGeocoding = ({ latitude, longitude }) => {
     
@@ -31,8 +33,10 @@ const ReverseGeocoding = ({ latitude, longitude }) => {
   });
 
 
-    return (
-      <p>latitude: {latitude}, longitude: {longitude}, city: {city}</p>
+  return (
+      <>
+      <Weather city={city}/>
+      </>
 )
 }
 
