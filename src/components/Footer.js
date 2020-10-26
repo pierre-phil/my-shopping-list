@@ -13,7 +13,7 @@ const Footer = () => {
       className={`py-2 text-center d-flex justify-content-center ${footerClass}`}
       style={{ borderTop: "1px solid #f0ad4e", fontSize: "0.7rem" }}
     >
-      <p className="mx-5">
+      <p className="mr-5">
         Inspiration :{" "}
         <a
           href="https://pehaa.com/"

@@ -5,10 +5,11 @@ import Weather from "./Weather";
 const ReverseGeocoding = ({ latitude, longitude }) => {
   const [city, setCity] = useState("");
 
+  
   useEffect(() => {
     // console.log("latitude", latitude);
     // console.log("longitude", longitude);
-
+    
     const API_TOKEN = process.env.REACT_APP_LOCATIONIQ_API_TOKEN;
     const url = `https://us1.locationiq.com/v1/reverse.php?key=${API_TOKEN}&lat=${latitude}&lon=${longitude}&format=json`;
     fetch(url)
@@ -16,7 +17,7 @@ const ReverseGeocoding = ({ latitude, longitude }) => {
         if (response.ok) {
           return response.json();
         }
-        throw new Error("conversion de coordonnées impossible");
+        throw new Error("Failed to fetch coordinates");
       })
       .then((result) => {
         // console.log("LocationIQ", result);
@@ -25,7 +26,7 @@ const ReverseGeocoding = ({ latitude, longitude }) => {
       })
       .catch((error) => {
         console.log(error.message);
-      });
+      }, [latitude, longitude]);
   });
 
   return (

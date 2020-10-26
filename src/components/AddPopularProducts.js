@@ -7,7 +7,7 @@ const AddPopularProducts = (props) => {
   const { mode } = useContext(ModeContext);
   const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
 
-  let initialPopulars = ["sel", "sucre", "pain", "lait", "beurre", "huile"];
+  let initialPopulars = ["pasta", "bread", "butter", "apples"];
   let [populars, setPopulars] = useState(
     () => JSON.parse(localStorage.getItem("myCustomItems")) || initialPopulars
   );

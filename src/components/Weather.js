@@ -11,7 +11,7 @@ const Weather = ({ city }) => {
         if (response.ok) {
           return response.json();
         }
-        throw new Error("météo introuvable");
+        throw new Error("Failed to fetch weather forecast");
       })
       .then((result) => {
         // console.log("meteo result", result);
