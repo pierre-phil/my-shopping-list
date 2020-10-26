@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 const Weather = ({ city }) => {
-
   const [conditions, setConditions] = useState({});
 
   useEffect(() => {
@@ -15,11 +14,11 @@ const Weather = ({ city }) => {
         throw new Error("météo introuvable");
       })
       .then((result) => {
-        console.log('meteo result', result);
-         setConditions({
+        console.log("meteo result", result);
+        setConditions({
           feelsLike: Math.round(result.main.feels_like),
           mainTemp: Math.round(result.main.temp),
-          description: result.weather[0].description
+          description: result.weather[0].description,
         });
       })
       .catch((error) => {
@@ -27,17 +26,15 @@ const Weather = ({ city }) => {
       });
   }, [city]);
 
-  console.log('description', conditions.description)
+  console.log("description", conditions.description);
 
-   return (
-    <p className="h6" style={{ fontSize: "0.7rem"}}>
+  return (
+    <p className="h6" style={{ fontSize: "0.7rem" }}>
       <b>Température : </b>
-       {conditions.mainTemp}&deg;C - ressentie {conditions.feelsLike}&deg;C ({city}) -  {conditions.description}
-
+      {conditions.mainTemp}&deg;C - ressentie {conditions.feelsLike}&deg;C (
+      {city}) - {conditions.description}
     </p>
   );
 };
-  
 
-    
-export default Weather
+export default Weather;

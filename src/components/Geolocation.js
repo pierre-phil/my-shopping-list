@@ -1,27 +1,24 @@
 import React from "react";
-import ReverseGeocoding from "./ReverseGeocoding"
+import ReverseGeocoding from "./ReverseGeocoding";
 
-import { usePosition } from 'use-position';
+import { usePosition } from "use-position";
 
 const Geolocation = () => {
-
-
-
-const watch = true;
-const {
-  latitude,
-  longitude,
-  /* speed,
+  const watch = true;
+  const {
+    latitude,
+    longitude,
+    /* speed,
   timestamp,
   accuracy,
   error, */
-} = usePosition(watch, { enableHighAccuracy: true });
- 
-    return (
-    <>
-            <ReverseGeocoding latitude={latitude} longitude={longitude} />
-            </>
-  );
-}
+  } = usePosition(watch, { enableHighAccuracy: true });
 
-export default Geolocation
+  return (
+    <>
+      <ReverseGeocoding latitude={latitude} longitude={longitude} />
+    </>
+  );
+};
+
+export default Geolocation;
