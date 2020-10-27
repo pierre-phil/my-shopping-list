@@ -27,7 +27,7 @@ const ReverseGeocoding = ({ lat, long }) => {
       });
   }, [lat, long, city]);
 
-  return <>{city !== "" ? <Weather city={city} /> : ""}</>;
+  return <>{city ? <Weather city={city} /> : ""}</>;
 };
 
 export default ReverseGeocoding;
