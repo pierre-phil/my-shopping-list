@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Weather from "./Weather";
 
-const ReverseGeocoding = ({ latitude, longitude }) => {
+const ReverseGeocoding = () => {
 
   const [city, setCity] = useState("");
   const [lat, setLat] = useState("")
@@ -52,8 +52,8 @@ const ReverseGeocoding = ({ latitude, longitude }) => {
       })
       .catch((error) => {
         console.log(error.message);
-      }, []);
-  });
+      });
+  }, [lat, long]);
 
   return (
     <>
