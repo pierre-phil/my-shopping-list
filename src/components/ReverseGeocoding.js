@@ -9,9 +9,9 @@ const ReverseGeocoding = () => {
 
   const available = () => {
     if ("geolocation" in navigator) {
-      console.log("Available");
+      // console.log("Available");
     } else {
-      console.log("Not Available");
+      // console.log("Not Available");
     }
   };
 
@@ -22,8 +22,8 @@ const ReverseGeocoding = () => {
       navigator.geolocation.getCurrentPosition(function (position) {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
-        console.log("lat", lat);
-        console.log("long", long);
+        // console.log("lat", lat);
+        // console.log("long", long);
       });
     };
     getPosition();
@@ -38,7 +38,7 @@ const ReverseGeocoding = () => {
         if (response.ok) {
           return response.json();
         }
-        throw new Error("Failed to fetch coordinates");
+       // throw new Error("Failed to fetch coordinates");
       })
       .then((result) => {
         // console.log("LocationIQ", result);
@@ -46,7 +46,7 @@ const ReverseGeocoding = () => {
         // console.log("city", city);
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
       });
   }
 

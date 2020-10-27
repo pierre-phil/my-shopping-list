@@ -2,16 +2,20 @@ import React, { useContext, useState, useEffect } from "react";
 import { ModeContext } from "../context/ModeContext";
 
 const AddPopularProducts = (props) => {
-  const { shopping, addToShoppingList } = props;
 
+  const { shopping, addToShoppingList } = props;
   const { mode } = useContext(ModeContext);
+
+  // Dark mode
   const buttonClass = mode === "dark" ? "btn-outline-light" : "btn-dark";
 
+  // Initial populars
   let initialPopulars = ["pasta", "bread", "butter", "apples"];
   let [populars, setPopulars] = useState(
     () => JSON.parse(localStorage.getItem("myCustomItems")) || initialPopulars
   );
 
+  // State variables
   const [items, setItems] = useState(false);
 
   const setCustomPopulars = () => {
@@ -26,13 +30,13 @@ const AddPopularProducts = (props) => {
     event.target.reset();
   };
 
+  // Set populars products in localStorage
   useEffect(() => {
-    // enreigstre popular products dans localstorage
     localStorage.setItem("myCustomItems", JSON.stringify(populars));
   }, [populars]);
 
   return (
-    <div className="col-sm-3">
+    <div className="col-md-3">
       <hr></hr>
       <p>Frequent items</p>
       <div>

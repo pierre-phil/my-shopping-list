@@ -7,14 +7,6 @@ const ShoppingApp = () => {
   const [shopping, setShopping] = useState(
     () => JSON.parse(localStorage.getItem("myShoppingList")) || []
   );
-  // ici on ajoute || [] au cas où le localStorage est vierge, qu'il puisse utiliser un array vide plutôt que undefined et ne pas retourner d'erreur
-  // ici nous mettons une fonction () => voir lazy initial state
-  // en effet il faut éviter que localStorage soit cherché à chaque render, cela bouffe de la ressource
-  // le fait de créer une fonction permet apparemment d'éviter ça
-
-  // on aurait pu aussi créer une variable :
-  // const getLocalStorage = () => JSON.parse(localStorage.getItem("myShoppingList")) || []
-  // const [shopping, setShopping] = useState(getLocalStorage)
 
   const addToShoppingList = (product) => {
     setShopping([...shopping, product]);

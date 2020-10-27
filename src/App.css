@@ -1,6 +1,7 @@
 .cookies {
   background-color: #5bc0de;
   border: 1px solid #f0ad4e;
+  box-shadow: 0 0 5px #f0ad4e;
   padding: 1rem;
   color: white;
   font-size: 0.7rem;
@@ -8,4 +9,10 @@
 
 .links {
   color: #f0ad4e;
+}
+
+.button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #f0ad4e;
 }

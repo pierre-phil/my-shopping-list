@@ -17,7 +17,7 @@ const AddProductForm = (props) => {
     event.target.reset();
   };
   return (
-    <form onSubmit={handleFormSubmit} className="col-sm-9">
+    <form onSubmit={handleFormSubmit} className="col-md-9">
       <hr></hr>
       <div className="input-group mb-3">
         <button

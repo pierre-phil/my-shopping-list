@@ -1,12 +1,15 @@
 import React from "react";
 
+import FlipMove from 'react-flip-move';
+
 const ShoppingList = (props) => {
   const { shopping, removeFromShoppingList, eraseShoppingList } = props;
 
   return (
-    <div className="col-sm-9">
+    <div className="col-md-9">
       <hr></hr>
       <ul>
+          <FlipMove duration="150">
         {shopping.map((el) => {
           return (
             <li className="mb-2" key={el}>
@@ -22,6 +25,7 @@ const ShoppingList = (props) => {
             </li>
           );
         })}
+          </FlipMove>
       </ul>
       {shopping.length >= 1 ? (
         <div className="d-flex justify-content-end">

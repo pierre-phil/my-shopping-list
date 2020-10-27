@@ -25,7 +25,7 @@ const Cookie = () => {
             weather forecast. Localisation is approximative.
           </p>
           <br></br>
-          <button onClick={handleCookieAccept}>OK</button>
+          <button className="button" onClick={handleCookieAccept}>OK</button>
         </div>
       )}
     </>
