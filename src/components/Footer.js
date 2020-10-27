@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { ModeContext } from "../context/ModeContext";
 
-import '../App.css'
+import "../App.css";
 
 const Footer = () => {
   const { mode } = useContext(ModeContext);
@@ -24,7 +24,17 @@ const Footer = () => {
           pehaa.com
         </a>
       </p>
-      <p>Contact / report a bug : <a className="links text-decoration-none" target="_blank" rel="noopener noreferrer" href="mailto:contact@my-shopping-list.com">email us</a></p>
+      <p>
+        Contact / report a bug :{" "}
+        <a
+          className="links text-decoration-none"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="mailto:contact@my-shopping-list.com"
+        >
+          email us
+        </a>
+      </p>
     </footer>
   );
 };
