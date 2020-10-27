@@ -10,10 +10,10 @@ const Footer = () => {
 
   return (
     <footer
-      className={`py-2 text-center d-flex justify-content-center ${footerClass}`}
+      className={`py-2 text-center d-flex justify-content-around ${footerClass}`}
       style={{ borderTop: "1px solid #f0ad4e", fontSize: "0.7rem" }}
     >
-      <p className="mr-5">
+      <p>
         Inspiration :{" "}
         <a
           href="https://pehaa.com/"
