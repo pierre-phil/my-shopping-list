@@ -4,7 +4,7 @@ import AppContainer from "./components/AppContainer";
 import ShoppingApp from "./components/ShoppingApp";
 import ModeSwitch from "./components/ModeSwitch";
 import ModeContextProvider from "./context/ModeContext";
-import Geolocation from "./components/Geolocation";
+import ReverseGeocoding from "./components/ReverseGeocoding";
 import Footer from "./components/Footer";
 import Cookie from "./components/Cookies";
 
@@ -17,7 +17,7 @@ function App() {
           <ModeSwitch />
         </header>
         <ShoppingApp />
-        <Geolocation />
+        <ReverseGeocoding />
         <Cookie />
       </AppContainer>
       <Footer />
