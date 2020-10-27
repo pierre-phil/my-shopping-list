@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { ModeContext } from "../context/ModeContext";
 
 const AddPopularProducts = (props) => {
-
   const { shopping, addToShoppingList } = props;
   const { mode } = useContext(ModeContext);
 
