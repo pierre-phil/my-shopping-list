@@ -46,4 +46,14 @@ src
 
 ## Bugs
 
-- geolocation not working on mobile and sometimes on desktop
+- geolocation not working on mobile and sometimes on desktop.
+  Removed location feature from the code.
+  In the future, to re-implement, add `<Location />` component in `App.js`
+
+  ```
+  import Location from "./components/Location";
+
+  <ShoppingApp />
+  --> <Location />
+      <Cookie />
+  ```

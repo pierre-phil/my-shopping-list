@@ -4,7 +4,6 @@ import AppContainer from "./components/AppContainer";
 import ShoppingApp from "./components/ShoppingApp";
 import ModeSwitch from "./components/ModeSwitch";
 import ModeContextProvider from "./context/ModeContext";
-import Location from "./components/Location";
 import Footer from "./components/Footer";
 import Cookie from "./components/Cookies";
 
@@ -17,7 +16,6 @@ function App() {
           <ModeSwitch />
         </header>
         <ShoppingApp />
-        <Location />
         <Cookie />
       </AppContainer>
       <Footer />
