@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import ReverseGeocoding from "./ReverseGeocoding";
 
 const Location = () => {
-  const [lat, setLat] = useState("empty");
-  const [long, setLong] = useState("empty");
 
-  const available = () => {
+  const [lat, setLat] = useState("loading");
+  const [long, setLong] = useState("loading");
+
+  /*   const available = () => {
     if ("geolocation" in navigator) {
       // console.log("Available");
     } else {
@@ -14,22 +15,25 @@ const Location = () => {
     }
   };
 
-  available();
+  available(); */
 
-  const getPosition = () => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setLat(position.coords.latitude);
-      setLong(position.coords.longitude);
-      // console.log("lat", lat);
-      // console.log("long", long);
-    });
-  };
-
-  getPosition();
+  useEffect(() => {
+    const getLocation = async () => {
+       await navigator.geolocation.getCurrentPosition(function (
+        position
+      ) {
+        setLat(position.coords.latitude);
+        setLong(position.coords.longitude);
+      });
+      //console.log("lat", lat)
+      //console.log("long", long)
+    };
+    getLocation();
+  });
 
   return (
     <>
-      {typeof lat === "number" && typeof lat === "number" ? (
+      {lat !== "loading" && long !== "loading" ? (
         <ReverseGeocoding lat={lat} long={long} />
       ) : (
         ""
