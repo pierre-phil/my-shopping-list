@@ -3,6 +3,7 @@
 ##### It is a simple shopping-list made for a student project that I improved a bit
 
 Site is live here : https://www.my-shopping-list.com
+(if broken link use https://practical-engelbart-e1a0c6.netlify.app/)
 
 ## Features
 
