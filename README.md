@@ -3,6 +3,7 @@
 ##### It is a simple shopping-list made for a student project that I improved a bit
 
 Site is live here : https://www.my-shopping-list.com
+(if broken link use https://practical-engelbart-e1a0c6.netlify.app/)
 
 ## Features
 
@@ -46,4 +47,14 @@ src
 
 ## Bugs
 
-- geolocation not working on mobile and sometimes on desktop
+- geolocation not working on mobile and sometimes on desktop.
+  Removed location feature from the code.
+  In the future, to re-implement, add `<Location />` component in `App.js`
+
+  ```
+  import Location from "./components/Location";
+
+  <ShoppingApp />
+  --> <Location />
+      <Cookie />
+  ```

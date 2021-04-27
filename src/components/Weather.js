@@ -24,7 +24,7 @@ const Weather = ({ city }) => {
       .catch((error) => {
         console.log(error.message);
       });
-  }, [city]);
+  });
 
   return (
     <p className="h6" style={{ fontSize: "0.7rem" }}>
